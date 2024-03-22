@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Learn\Tests\Yadro\build\CMakeFiles\58ec4f10920fd12048aad5d1beeb2823\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{EA1FCC34-04A2-3A87-B9B3-E8F62F3494CD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,3 @@
+C:/Learn/Tests/Yadro/build/CMakeFiles/Tape.dir
+C:/Learn/Tests/Yadro/build/CMakeFiles/ALL_BUILD.dir
+C:/Learn/Tests/Yadro/build/CMakeFiles/ZERO_CHECK.dir

@@ -1,0 +1,21 @@
+# CMake generation dependency list for this directory.
+C:/Learn/Tests/Yadro/CMakeLists.txt
+C:/Learn/Tests/Yadro/build/CMakeFiles/3.27.2/CMakeCXXCompiler.cmake
+C:/Learn/Tests/Yadro/build/CMakeFiles/3.27.2/CMakeRCCompiler.cmake
+C:/Learn/Tests/Yadro/build/CMakeFiles/3.27.2/CMakeSystem.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/CMakeRCInformation.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/Compiler/MSVC-CXX.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/Compiler/MSVC.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/Platform/Windows-MSVC.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/Platform/Windows.cmake
+C:/dev/mingw64/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake
