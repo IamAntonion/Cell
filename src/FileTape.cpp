@@ -18,18 +18,17 @@ void FileTape::Read() {
     //file.read(reinterpret_cast<char*>(data), sizeof(int));
     while (file_ >> dataTmp) {
         //if (data_.size() == N) tmp = 
+        //std::cout << dataTmp << std::endl;
         data_.push(dataTmp);
     }
 
-    size = data_.size();
-
-    //file_.close();
+    //size = data_.size();
 }
 
-void FileTape::Write(int data) {
-    file_ << data << ' ';
-
-    //file_.close();
+void FileTape::Write() {
+    file_ << data_.front() << " ";
+    std::cout << "Write " << data_.front() << "\n";
+    data_.pop();
 }
 
 size_t FileTape::Size() {
@@ -42,10 +41,12 @@ int FileTape::GetValue() {
     int tmp = 0;
     tmp = data_.front();
     data_.pop();
+    //std::cout << "Get " << tmp << std::endl;
 
     return tmp;
 }
 
 void FileTape::SetValue(int value) {
     data_.push(value);
+    //std::cout << "Set " << data_.back() << "\n";
 }

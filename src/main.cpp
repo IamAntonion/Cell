@@ -34,12 +34,6 @@ int main (int argc, char* argv[]) {
     std::string path = tmp.substr(0, iter - tmp.begin());
     std::cout << path << std::endl;
 
-    // for (auto i = path.begin(); i != path.end(); ++i) {
-    //     if (*i == '\\') {
-    //         *i = '/';
-    //     }
-    // }
-
     std::cout << path << std::endl;
 
     std::cout << "Enter the input file name \n";
@@ -50,17 +44,18 @@ int main (int argc, char* argv[]) {
     inputTape.Read();
 
     std::cout << "Enter the output file name \n";
-    std::string output  = "input.txt";
+    std::string output  = "output.txt";
     //std::cin >> output;
-    
+
     FileTape outputTape(path + output);
-    
-    size_t size = inputTape.Size();
-    for (int i = 0; i != size; ++i) {
-        outputTape.Write(inputTape.GetValue());
-    }
 
     SorterTape sort(inputTape, outputTape);
+
+    size_t size = outputTape.Size();
+    for (int i = 0; i != size; ++i) {
+        outputTape.Write();
+    }
+
     std::cout << "OK!\n";
 
     return 0;
