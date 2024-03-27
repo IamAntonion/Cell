@@ -23,6 +23,7 @@
 
 // добавить конфиг
 
+// cmake -G "MinGW Makefiles" ..
 // cmake --build. --config Release --target Tape
 
 #include "SorterTape.h"
@@ -33,21 +34,25 @@ int main (int argc, char* argv[]) {
     std::string path = tmp.substr(0, iter - tmp.begin());
     std::cout << path << std::endl;
 
-    //std::cout << argv[0];
-    std::cout << "Enter the input file name \n";
-    std::string input;
-    std::cin >> input;
+    // for (auto i = path.begin(); i != path.end(); ++i) {
+    //     if (*i == '\\') {
+    //         *i = '/';
+    //     }
+    // }
 
-    // std::string tmp = argv[1];
-    // size_t pos = tmp.find_last_of("\\");
-    // std::string path = path.substr(0, pos + 1);
+    std::cout << path << std::endl;
+
+    std::cout << "Enter the input file name \n";
+    std::string input = "input.txt";
+    //std::cin >> input;
     
     FileTape inputTape(path + input);
     inputTape.Read();
 
     std::cout << "Enter the output file name \n";
-    std::string output;
-    std::cin >> output;
+    std::string output  = "input.txt";
+    //std::cin >> output;
+    
     FileTape outputTape(path + output);
     
     size_t size = inputTape.Size();
