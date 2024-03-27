@@ -4,12 +4,16 @@
 #include <vector>
 #include <stdexcept>
 #include <iostream>
+#include <algorithm>
 
 class FileTape : public TapeInterface {
 public:
+    FileTape() = default;
     FileTape(std::string fileName);
+    //~FileTape();
+
     void Read() override;
-    void Write(std::queue<int> data) override;
+    void Write(int data) override;
 
     int Size() override;
     int GetValue() override;
@@ -18,5 +22,8 @@ private:
     std::fstream file_;     // файл
     std::queue<int> data_;  // данные
 
-    // std::fstream CreateFile();
+    FileTape* tmp;          // следующий tape
+
+    int N = INT_MAX;        // максимальная длина tape
+    int size;               // текущая длина
 };
