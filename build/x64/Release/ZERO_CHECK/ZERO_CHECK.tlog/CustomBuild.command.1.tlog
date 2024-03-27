@@ -1,6 +1,6 @@
-^C:\LEARN\TESTS\YADRO\BUILD\CMAKEFILES\58EC4F10920FD12048AAD5D1BEEB2823\GENERATE.STAMP.RULE
+^C:\LEARN\TESTS\CELL\BUILD\CMAKEFILES\50155175FA603CCE1B433E21B3ACD7A3\GENERATE.STAMP.RULE
 setlocal
-C:\dev\mingw64\bin\cmake.exe -SC:/Learn/Tests/Yadro -BC:/Learn/Tests/Yadro/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Learn/Tests/Yadro/build/TapeInter.sln
+C:\dev\mingw64\bin\cmake.exe -SC:/Learn/Tests/Cell -BC:/Learn/Tests/Cell/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Learn/Tests/Cell/build/TapeInter.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

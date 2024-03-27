@@ -1,8 +1,8 @@
-# Install script for directory: C:/Learn/Tests/Yadro
+# Install script for directory: C:/Learn/Tests/Cell
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Tape")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/TapeInter")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Learn/Tests/Yadro/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Learn/Tests/Cell/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

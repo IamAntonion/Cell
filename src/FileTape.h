@@ -15,7 +15,7 @@ public:
     void Read() override;
     void Write(int data) override;
 
-    int Size() override;
+    size_t Size() override;
     int GetValue() override;
     void SetValue(int value) override;
 private:
@@ -25,5 +25,5 @@ private:
     FileTape* tmp;          // следующий tape
 
     int N = INT_MAX;        // максимальная длина tape
-    int size;               // текущая длина
+    size_t size;            // текущая длина
 };

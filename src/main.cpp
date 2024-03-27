@@ -27,20 +27,30 @@
 
 #include "SorterTape.h"
 
-int main (int argc, char* argv[]) {   
-    std::cout << argv[0];
+int main (int argc, char* argv[]) {  
+    std::string tmp = argv[0];
+    auto iter = std::find(tmp.rbegin(), tmp.rend(), '\\').base();
+    std::string path = tmp.substr(0, iter - tmp.begin());
+    std::cout << path << std::endl;
+
+    //std::cout << argv[0];
     std::cout << "Enter the input file name \n";
     std::string input;
     std::cin >> input;
-    FileTape inputTape(input);
+
+    // std::string tmp = argv[1];
+    // size_t pos = tmp.find_last_of("\\");
+    // std::string path = path.substr(0, pos + 1);
+    
+    FileTape inputTape(path + input);
     inputTape.Read();
 
     std::cout << "Enter the output file name \n";
     std::string output;
     std::cin >> output;
-    FileTape outputTape(output);
+    FileTape outputTape(path + output);
     
-    int size = inputTape.Size();
+    size_t size = inputTape.Size();
     for (int i = 0; i != size; ++i) {
         outputTape.Write(inputTape.GetValue());
     }

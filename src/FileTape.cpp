@@ -2,11 +2,15 @@
 
 FileTape::FileTape(std::string fileName) {
     file_.open(fileName, std::ios::in | std::ios::out | std::ios::binary);
-    if (!file_) {
+    if (!file_.is_open()) {
         std::cout << "Create new " << fileName << " file\n";
-        //throw std::runtime_error(fileName);
+        
         std::fstream file(fileName);
         file_.open(fileName, std::ios::in | std::ios::out | std::ios::binary);
+        if (!file_.is_open()) {
+            std::cout << "Not create " << fileName << " file\n";
+            throw std::runtime_error(fileName); // std::runtime_error не выводится
+        }
     }
 }
 
@@ -29,7 +33,7 @@ void FileTape::Write(int data) {
     file_.close();
 }
 
-int FileTape::Size() {
+size_t FileTape::Size() {
     return data_.size();
 }
 
