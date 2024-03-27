@@ -3,7 +3,13 @@
 FileTape::FileTape(std::string fileName) {
     file_.open(fileName, std::ios::in | std::ios::out | std::ios::binary);
     if (!file_.is_open()) {
-        throw std::runtime_error(fileName); 
+        std::cout << "Create new " << fileName << " file\n";
+        
+        std::fstream file(fileName);
+        file_.open(fileName, std::ios::out | std::ios::binary);
+        if (!file_.is_open()) {
+            throw std::runtime_error(fileName); 
+        }
     }
 }
 
