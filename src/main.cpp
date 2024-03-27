@@ -27,6 +27,26 @@
 // cmake --build. --config Release --target Tape
 
 #include "SorterTape.h"
+#include <cassert>
+
+
+void TestSorter() {
+    FileTape input;
+
+    input.SetValue(3);
+    input.SetValue(1);
+    input.SetValue(5);
+
+    FileTape output;
+    SorterTape sort(input, output);
+
+    std::vector<int> res = {1, 3, 5};
+    assert(output.Size() == res.size());
+
+    for (int i = 0; i != res.size(); ++i) {
+        assert(output.GetValue() == res[i]);
+    }
+}
 
 int main (int argc, char* argv[]) {  
     std::string tmp = argv[0];

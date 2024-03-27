@@ -15,14 +15,9 @@ FileTape::FileTape(std::string fileName) {
 
 void FileTape::Read() {
     int dataTmp;
-    //file.read(reinterpret_cast<char*>(data), sizeof(int));
     while (file_ >> dataTmp) {
-        //if (data_.size() == N) tmp = 
-        //std::cout << dataTmp << std::endl;
         data_.push(dataTmp);
     }
-
-    //size = data_.size();
 }
 
 void FileTape::Write() {
@@ -36,17 +31,15 @@ size_t FileTape::Size() {
 }
 
 int FileTape::GetValue() {
-    if (data_.empty()) throw std::invalid_argument("Value is zero");
+    if (data_.empty()) throw std::invalid_argument("Value is empty");
     
     int tmp = 0;
     tmp = data_.front();
     data_.pop();
-    //std::cout << "Get " << tmp << std::endl;
 
     return tmp;
 }
 
 void FileTape::SetValue(int value) {
     data_.push(value);
-    //std::cout << "Set " << data_.back() << "\n";
 }

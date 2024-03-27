@@ -5,6 +5,7 @@
 #include <stdexcept>
 #include <iostream>
 #include <algorithm>
+#include <queue>
 
 class FileTape : public TapeInterface {
 public:
@@ -24,6 +25,7 @@ private:
 
     FileTape* tmp;          // следующий tape
 
-    int N = INT_MAX;        // максимальная длина tape
+    //int N = 40;        // максимальная длина ленты tape
+    //size_t M = 20;        // ограничение памяти в байтах
     //size_t size = 0;            // текущая длина
 };

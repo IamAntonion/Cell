@@ -62,12 +62,6 @@ CMakeFiles/Tape.dir/src/SorterTape.cpp.obj: \
  C:/dev/mingw64/include/c++/13.2.0/bits/uses_allocator_args.h \
  C:/dev/mingw64/include/c++/13.2.0/tuple \
  C:\Learn\Tests\Cell\src\FileTape.h C:\Learn\Tests\Cell\src\Interface.h \
- C:/dev/mingw64/include/c++/13.2.0/queue \
- C:/dev/mingw64/include/c++/13.2.0/deque \
- C:/dev/mingw64/include/c++/13.2.0/bits/stl_deque.h \
- C:/dev/mingw64/include/c++/13.2.0/bits/deque.tcc \
- C:/dev/mingw64/include/c++/13.2.0/bits/stl_heap.h \
- C:/dev/mingw64/include/c++/13.2.0/bits/stl_queue.h \
  C:/dev/mingw64/include/c++/13.2.0/string \
  C:/dev/mingw64/include/c++/13.2.0/bits/stringfwd.h \
  C:/dev/mingw64/include/c++/13.2.0/bits/char_traits.h \
@@ -169,7 +163,13 @@ CMakeFiles/Tape.dir/src/SorterTape.cpp.obj: \
  C:/dev/mingw64/include/c++/13.2.0/algorithm \
  C:/dev/mingw64/include/c++/13.2.0/bits/stl_algo.h \
  C:/dev/mingw64/include/c++/13.2.0/bits/algorithmfwd.h \
+ C:/dev/mingw64/include/c++/13.2.0/bits/stl_heap.h \
  C:/dev/mingw64/include/c++/13.2.0/bits/uniform_int_dist.h \
  C:/dev/mingw64/include/c++/13.2.0/bits/stl_tempbuf.h \
  C:/dev/mingw64/include/c++/13.2.0/pstl/glue_algorithm_defs.h \
- C:/dev/mingw64/include/c++/13.2.0/pstl/execution_defs.h
+ C:/dev/mingw64/include/c++/13.2.0/pstl/execution_defs.h \
+ C:/dev/mingw64/include/c++/13.2.0/queue \
+ C:/dev/mingw64/include/c++/13.2.0/deque \
+ C:/dev/mingw64/include/c++/13.2.0/bits/stl_deque.h \
+ C:/dev/mingw64/include/c++/13.2.0/bits/deque.tcc \
+ C:/dev/mingw64/include/c++/13.2.0/bits/stl_queue.h
