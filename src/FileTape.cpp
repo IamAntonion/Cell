@@ -73,7 +73,7 @@ int FileTape::GetValue() {
     if (data_.empty()) throw std::invalid_argument("Can't get value. Vector is empty");
 
     int tmp;
-    if (pos_ == Size()) {
+    if (pos_ != Size()) {
         tmp = data_[pos_];
         ForwardOneStep();
         return tmp;

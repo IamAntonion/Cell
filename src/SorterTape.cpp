@@ -7,24 +7,14 @@ SorterTape::SorterTape(TapeInterface& input, TapeInterface& output) {
 void SorterTape::Sort(TapeInterface& input, TapeInterface& output) {
     std::vector<int> dataTmp;
 
-    //int size = input.Size();
+    int size = input.Size();
+    dataTmp.reserve(size);
 
-    std::cout << "Here1\n";
-
-    //dataTmp.reserve(size);
-
-    int tmp = NULL;
-    while (tmp = input.GetValue()) {
-        //std::cout << tmp << "\n";
+    for (int i = 0; i != size; ++i) {
+        int tmp = input.GetValue();
         dataTmp.push_back(tmp);
     }
 
-    std::cout << "Here2\n";
-
-    // for (int i = 0; i != size; ++i) {
-    //     int tmp = input.GetValue();
-    //     dataTmp.push_back(tmp);
-    // }
 
     std::sort(dataTmp.begin(), dataTmp.end());
 
@@ -32,6 +22,35 @@ void SorterTape::Sort(TapeInterface& input, TapeInterface& output) {
         output.SetValue(dataTmp[i]);
     }
 }
+
+// void SorterTape::Sort(TapeInterface& input, TapeInterface& output) {
+//     std::vector<int> dataTmp;
+
+//     //int size = input.Size();
+
+//     std::cout << "Here1\n";
+
+//     //dataTmp.reserve(size);
+
+//     int tmp = NULL;
+//     while (tmp = input.GetValue()) {
+//         //std::cout << tmp << "\n";
+//         dataTmp.push_back(tmp);
+//     }
+
+//     std::cout << "Here2\n";
+
+//     // for (int i = 0; i != size; ++i) {
+//     //     int tmp = input.GetValue();
+//     //     dataTmp.push_back(tmp);
+//     // }
+
+//     std::sort(dataTmp.begin(), dataTmp.end());
+
+//     for (int i = 0; i != dataTmp.size(); ++i) {
+//         output.SetValue(dataTmp[i]);
+//     }
+// }
 
 // void SorterTape::Sort(TapeInterface& input) {
 //     std::vector<int> dataTmp;
