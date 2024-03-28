@@ -73,16 +73,15 @@ int FileTape::GetValue() {
     if (data_.empty()) throw std::invalid_argument("Can't get value. Vector is empty");
 
     int tmp;
-    if (pos_ == Size()) {
+    if (pos_ != Size()) {
+        std::cout << "NOT NULL\n";
         tmp = data_[pos_];
         ForwardOneStep();
-        return tmp;
-    }
-    if (tmp == NULL) {
+    } else if (tmp == NULL) {
+        std::cout << "NULL\n";
         tmp = tmpTape_->GetValue();
-        return tmp;
     }
-    return NULL;
+    return tmp;
 }
 
 void FileTape::SetValue(int value) {
@@ -92,23 +91,23 @@ void FileTape::SetValue(int value) {
         std::cout << value << std::endl;
         data_.push_back(value);
     }
-    if (data_.size() >= M_ / sizeof(int)) {
-        fileTmp_.close();
-        //tmpTape_->SetTape(".\\tmp\\tmp.txt");
-        std::ofstream outputText(".\\tmp\\outtmp.txt");
-        std::ifstream inputText(".\\tmp\\tmp.txt");
-        int num;
-        while (inputText >> num) {
-            outputText << num << " ";
-        }
+    // if (data_.size() >= M_ / sizeof(int)) {
+    //     fileTmp_.close();
+    //     //tmpTape_->SetTape(".\\tmp\\tmp.txt");
+    //     std::ofstream outputText(".\\tmp\\outtmp.txt");
+    //     std::ifstream inputText(".\\tmp\\tmp.txt");
+    //     int num;
+    //     while (inputText >> num) {
+    //         outputText << num << " ";
+    //     }
 
-        outputText.close();
-        inputText.close();
+    //     outputText.close();
+    //     inputText.close();
 
-        FileTape tapeTmp(".\\tmp\\outtmp.txt");
-        tmpTape_ = &tapeTmp;
-        tmpTape_->Read();
-    }
+    //     FileTape tapeTmp(".\\tmp\\outtmp.txt");
+    //     tmpTape_ = &tapeTmp;
+    //     tmpTape_->Read();
+    // }
 }
 
 void FileTape::ForwardOneStep() {

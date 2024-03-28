@@ -15,7 +15,7 @@ void SorterTape::Sort(TapeInterface& input, TapeInterface& output) {
 
     int tmp = NULL;
     while (tmp = input.GetValue()) {
-        std::cout << "1\n";
+        std::cout << tmp << "\n";
         dataTmp.push_back(tmp);
     }
 
