@@ -167,9 +167,4 @@ CMakeFiles/Tape.dir/src/SorterTape.cpp.obj: \
  C:/dev/mingw64/include/c++/13.2.0/bits/uniform_int_dist.h \
  C:/dev/mingw64/include/c++/13.2.0/bits/stl_tempbuf.h \
  C:/dev/mingw64/include/c++/13.2.0/pstl/glue_algorithm_defs.h \
- C:/dev/mingw64/include/c++/13.2.0/pstl/execution_defs.h \
- C:/dev/mingw64/include/c++/13.2.0/queue \
- C:/dev/mingw64/include/c++/13.2.0/deque \
- C:/dev/mingw64/include/c++/13.2.0/bits/stl_deque.h \
- C:/dev/mingw64/include/c++/13.2.0/bits/deque.tcc \
- C:/dev/mingw64/include/c++/13.2.0/bits/stl_queue.h
+ C:/dev/mingw64/include/c++/13.2.0/pstl/execution_defs.h
