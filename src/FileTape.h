@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Interface.h"
 #include <string>
 #include <fstream>
@@ -5,27 +7,34 @@
 #include <stdexcept>
 #include <iostream>
 #include <algorithm>
-#include <queue>
+#include <string>
 
 class FileTape : public TapeInterface {
 public:
-    FileTape() = default;
+    FileTape();
     FileTape(std::string fileName);
     //~FileTape();
 
     void Read() override;
     void Write() override;
+    void ForwardOneStep() override;
+    void Rewind() override;
 
     size_t Size() override;
     int GetValue() override;
     void SetValue(int value) override;
+
 private:
-    std::fstream file_;     // файл
-    std::queue<int> data_;  // данные
+    int pos_ = 0;
+    int N_ = 0;                 // максимальный размер контейнера с данными
+    int M_ = 0;                 // максимальная вместимость в байтах
 
-    FileTape* tmp;          // следующий tape
+    FileTape* tmpTape_;         //временная лента
+    
+    std::vector<int> data_;     // данные
+    std::fstream file_;         // файл
+    std::fstream fileTmp_;      // файл
 
-    //int N = 40;        // максимальная длина ленты tape
-    //size_t M = 20;        // ограничение памяти в байтах
-    //size_t size = 0;            // текущая длина
+    void GetConfig();
+    void SetTape(const std::string& textFile);
 };

@@ -24,7 +24,7 @@
 // добавить конфиг
 
 // cmake -G "MinGW Makefiles" ..
-// cmake --build. --config Release --target Tape
+// cmake --build .
 
 #include "SorterTape.h"
 #include <cassert>
@@ -41,7 +41,6 @@ void TestSorter() {
     SorterTape sort(input, output);
 
     std::vector<int> res = {1, 3, 5};
-    assert(output.Size() == res.size());
 
     for (int i = 0; i != res.size(); ++i) {
         assert(output.GetValue() == res[i]);
@@ -49,16 +48,16 @@ void TestSorter() {
 }
 
 int main (int argc, char* argv[]) {  
+    //TestSorter();
+
     std::string tmp = argv[0];
     auto iter = std::find(tmp.rbegin(), tmp.rend(), '\\').base();
-    std::string path = tmp.substr(0, iter - tmp.begin());
-    std::cout << path << std::endl;
-
-    std::cout << path << std::endl;
+    std::string path = tmp.substr(0, iter - tmp.begin()) + "result\\";
 
     std::cout << "Enter the input file name \n";
     std::string input = "input.txt";
     //std::cin >> input;
+    std::cout << input << std::endl;
     
     FileTape inputTape(path + input);
     inputTape.Read();
@@ -66,15 +65,13 @@ int main (int argc, char* argv[]) {
     std::cout << "Enter the output file name \n";
     std::string output  = "output.txt";
     //std::cin >> output;
+    std::cout << output << std::endl;
 
     FileTape outputTape(path + output);
 
     SorterTape sort(inputTape, outputTape);
 
-    size_t size = outputTape.Size();
-    for (int i = 0; i != size; ++i) {
-        outputTape.Write();
-    }
+    outputTape.Write();
 
     std::cout << "OK!\n";
 
