@@ -8,12 +8,17 @@
 #include <iostream>
 #include <algorithm>
 #include <string>
+#include <iterator>
 
 class FileTape : public TapeInterface {
 public:
     FileTape();
-    FileTape(std::string fileName);
-    //~FileTape();
+    FileTape(const std::string& fileName);
+    ~FileTape() {
+        if (file_.is_open()) {
+            file_.close();
+        }
+    }
 
     void Read() override;
     void Write() override;
@@ -34,6 +39,8 @@ private:
     std::vector<int> data_;     // данные
     std::fstream file_;         // файл
     std::fstream fileTmp_;      // файл
+
+    std::string nameFile_;
 
     void GetConfig();
     void SetTape(const std::string& textFile);

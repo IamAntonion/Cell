@@ -4,8 +4,13 @@ FileTape::FileTape() {
     GetConfig();
 }
 
-FileTape::FileTape(std::string fileName) {
+FileTape::FileTape(const std::string& fileName) {
     GetConfig();
+    //auto iter = std::find(fileName.rbegin(), fileName.rend(), '\\');
+    //nameFile_ = fileName.substr(fileName.size() - std::distance(iter.base(), fileName.end()));
+
+    //std::cout << nameFile_ << "\n";
+
     file_.open(fileName, std::ios::in | std::ios::out | std::ios::binary);
     if (!file_.is_open()) {
         std::cout << "Create new " << fileName << " file\n";
@@ -22,6 +27,7 @@ void FileTape::Read() {
     int dataTmp;
     std::ofstream tmp;
     bool first = false;
+
     while (file_ >> dataTmp) {
         if (data_.size() >= M_ / sizeof(int)) {
             if (!first) {
@@ -34,11 +40,14 @@ void FileTape::Read() {
             data_.push_back(dataTmp);
         }
     }
+
     if (tmp.is_open()) {
+        file_.close();
         tmp.close();
-        //tmpTape_->SetTape(".\\tmp\\tmp.txt");
+
         std::ofstream outputText(".\\tmp\\outtmp.txt");
         std::ifstream inputText(".\\tmp\\tmp.txt");
+
         int num;
         while (inputText >> num) {
             outputText << num << " ";
@@ -47,6 +56,7 @@ void FileTape::Read() {
         outputText.close();
         inputText.close();
 
+        //static FileTape tapeTmp(".\\tmp\\outtmp.txt");
         FileTape tapeTmp(".\\tmp\\outtmp.txt");
         tmpTape_ = &tapeTmp;
         tmpTape_->Read();
@@ -72,13 +82,14 @@ size_t FileTape::Size() {
 int FileTape::GetValue() {
     if (data_.empty()) throw std::invalid_argument("Can't get value. Vector is empty");
 
-    int tmp;
+    int tmp = NULL;
     if (pos_ != Size()) {
         tmp = data_[pos_];
         ForwardOneStep();
         return tmp;
     }
-    if (tmp == NULL) {
+    //if (tmp == NULL) {
+    if (pos_ == Size()) {
         tmp = tmpTape_->GetValue();
         return tmp;
     }
@@ -92,23 +103,7 @@ void FileTape::SetValue(int value) {
         std::cout << value << std::endl;
         data_.push_back(value);
     }
-    if (data_.size() >= M_ / sizeof(int)) {
-        fileTmp_.close();
-        //tmpTape_->SetTape(".\\tmp\\tmp.txt");
-        std::ofstream outputText(".\\tmp\\outtmp.txt");
-        std::ifstream inputText(".\\tmp\\tmp.txt");
-        int num;
-        while (inputText >> num) {
-            outputText << num << " ";
-        }
-
-        outputText.close();
-        inputText.close();
-
-        FileTape tapeTmp(".\\tmp\\outtmp.txt");
-        tmpTape_ = &tapeTmp;
-        tmpTape_->Read();
-    }
+    
 }
 
 void FileTape::ForwardOneStep() {
@@ -140,6 +135,7 @@ void FileTape::GetConfig() {
             }
         }
     }
+    conf.close();
 }
 
 void FileTape::SetTape(const std::string& textFile) {

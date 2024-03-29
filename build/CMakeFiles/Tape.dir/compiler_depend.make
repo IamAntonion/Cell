@@ -61,6 +61,7 @@ CMakeFiles/Tape.dir/src/FileTape.cpp.obj: C:/Learn/Tests/Cell/src/FileTape.cpp \
   C:/dev/mingw64/include/c++/13.2.0/bits/stl_tempbuf.h \
   C:/dev/mingw64/include/c++/13.2.0/bits/stl_uninitialized.h \
   C:/dev/mingw64/include/c++/13.2.0/bits/stl_vector.h \
+  C:/dev/mingw64/include/c++/13.2.0/bits/stream_iterator.h \
   C:/dev/mingw64/include/c++/13.2.0/bits/streambuf.tcc \
   C:/dev/mingw64/include/c++/13.2.0/bits/streambuf_iterator.h \
   C:/dev/mingw64/include/c++/13.2.0/bits/string_view.tcc \
@@ -92,6 +93,7 @@ CMakeFiles/Tape.dir/src/FileTape.cpp.obj: C:/Learn/Tests/Cell/src/FileTape.cpp \
   C:/dev/mingw64/include/c++/13.2.0/iosfwd \
   C:/dev/mingw64/include/c++/13.2.0/iostream \
   C:/dev/mingw64/include/c++/13.2.0/istream \
+  C:/dev/mingw64/include/c++/13.2.0/iterator \
   C:/dev/mingw64/include/c++/13.2.0/new \
   C:/dev/mingw64/include/c++/13.2.0/ostream \
   C:/dev/mingw64/include/c++/13.2.0/pstl/execution_defs.h \
@@ -231,6 +233,7 @@ CMakeFiles/Tape.dir/src/SorterTape.cpp.obj: C:/Learn/Tests/Cell/src/SorterTape.c
   C:/dev/mingw64/include/c++/13.2.0/bits/stl_tempbuf.h \
   C:/dev/mingw64/include/c++/13.2.0/bits/stl_uninitialized.h \
   C:/dev/mingw64/include/c++/13.2.0/bits/stl_vector.h \
+  C:/dev/mingw64/include/c++/13.2.0/bits/stream_iterator.h \
   C:/dev/mingw64/include/c++/13.2.0/bits/streambuf.tcc \
   C:/dev/mingw64/include/c++/13.2.0/bits/streambuf_iterator.h \
   C:/dev/mingw64/include/c++/13.2.0/bits/string_view.tcc \
@@ -262,6 +265,7 @@ CMakeFiles/Tape.dir/src/SorterTape.cpp.obj: C:/Learn/Tests/Cell/src/SorterTape.c
   C:/dev/mingw64/include/c++/13.2.0/iosfwd \
   C:/dev/mingw64/include/c++/13.2.0/iostream \
   C:/dev/mingw64/include/c++/13.2.0/istream \
+  C:/dev/mingw64/include/c++/13.2.0/iterator \
   C:/dev/mingw64/include/c++/13.2.0/new \
   C:/dev/mingw64/include/c++/13.2.0/ostream \
   C:/dev/mingw64/include/c++/13.2.0/pstl/execution_defs.h \
@@ -402,6 +406,7 @@ CMakeFiles/Tape.dir/src/main.cpp.obj: C:/Learn/Tests/Cell/src/main.cpp \
   C:/dev/mingw64/include/c++/13.2.0/bits/stl_tempbuf.h \
   C:/dev/mingw64/include/c++/13.2.0/bits/stl_uninitialized.h \
   C:/dev/mingw64/include/c++/13.2.0/bits/stl_vector.h \
+  C:/dev/mingw64/include/c++/13.2.0/bits/stream_iterator.h \
   C:/dev/mingw64/include/c++/13.2.0/bits/streambuf.tcc \
   C:/dev/mingw64/include/c++/13.2.0/bits/streambuf_iterator.h \
   C:/dev/mingw64/include/c++/13.2.0/bits/string_view.tcc \
@@ -434,6 +439,7 @@ CMakeFiles/Tape.dir/src/main.cpp.obj: C:/Learn/Tests/Cell/src/main.cpp \
   C:/dev/mingw64/include/c++/13.2.0/iosfwd \
   C:/dev/mingw64/include/c++/13.2.0/iostream \
   C:/dev/mingw64/include/c++/13.2.0/istream \
+  C:/dev/mingw64/include/c++/13.2.0/iterator \
   C:/dev/mingw64/include/c++/13.2.0/new \
   C:/dev/mingw64/include/c++/13.2.0/ostream \
   C:/dev/mingw64/include/c++/13.2.0/pstl/execution_defs.h \
@@ -584,6 +590,12 @@ C:/dev/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h:
 
 C:/dev/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h:
 
+C:/dev/mingw64/x86_64-w64-mingw32/include/malloc.h:
+
+C:/dev/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h:
+
+C:/dev/mingw64/x86_64-w64-mingw32/include/_mingw.h:
+
 C:/dev/mingw64/include/c++/13.2.0/bits/stl_uninitialized.h:
 
 C:/dev/mingw64/include/c++/13.2.0/bits/stl_pair.h:
@@ -708,10 +720,6 @@ C:/dev/mingw64/include/c++/13.2.0/ext/string_conversions.h:
 
 C:/dev/mingw64/include/c++/13.2.0/bits/invoke.h:
 
-C:/dev/mingw64/x86_64-w64-mingw32/include/malloc.h:
-
-C:/dev/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h:
-
 C:/dev/mingw64/include/c++/13.2.0/bits/stl_construct.h:
 
 C:/dev/mingw64/include/c++/13.2.0/bits/codecvt.h:
@@ -754,6 +762,8 @@ C:/dev/mingw64/include/c++/13.2.0/iosfwd:
 
 C:/dev/mingw64/include/c++/13.2.0/bits/ios_base.h:
 
+C:/dev/mingw64/include/c++/13.2.0/initializer_list:
+
 C:/dev/mingw64/include/c++/13.2.0/ext/type_traits.h:
 
 C:/dev/mingw64/include/c++/13.2.0/bits/string_view.tcc:
@@ -784,6 +794,8 @@ C:/dev/mingw64/include/c++/13.2.0/pstl/execution_defs.h:
 
 C:/dev/mingw64/include/c++/13.2.0/debug/assertions.h:
 
+C:/dev/mingw64/include/c++/13.2.0/bits/stream_iterator.h:
+
 C:/dev/mingw64/include/c++/13.2.0/debug/debug.h:
 
 C:/dev/mingw64/include/c++/13.2.0/bits/range_access.h:
@@ -798,11 +810,11 @@ C:/dev/mingw64/include/c++/13.2.0/ext/atomicity.h:
 
 C:/dev/mingw64/include/c++/13.2.0/tuple:
 
-C:/dev/mingw64/include/c++/13.2.0/initializer_list:
-
 C:/dev/mingw64/include/c++/13.2.0/ios:
 
 C:/dev/mingw64/include/c++/13.2.0/iostream:
+
+C:/dev/mingw64/include/c++/13.2.0/iterator:
 
 C:/dev/mingw64/include/c++/13.2.0/pstl/glue_algorithm_defs.h:
 
@@ -861,5 +873,3 @@ C:/dev/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stddef.h:
 C:/dev/mingw64/x86_64-w64-mingw32/include/mcfgthread/once.h:
 
 C:/dev/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stdint.h:
-
-C:/dev/mingw64/x86_64-w64-mingw32/include/_mingw.h:
