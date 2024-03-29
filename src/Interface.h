@@ -11,4 +11,5 @@ public:
     virtual size_t SizeAllData() = 0;
     virtual int GetValue() = 0;
     virtual void SetValue(int value) = 0;
+    virtual void CloseAdditionalFile() = 0;
 };

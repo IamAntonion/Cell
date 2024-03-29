@@ -6,5 +6,4 @@ public:
     SorterTape(TapeInterface& input, TapeInterface& output);
     
     void Sort(TapeInterface& input, TapeInterface& output);
-    // void Sort(TapeInterface& input);
 };

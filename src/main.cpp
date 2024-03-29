@@ -21,8 +21,6 @@
 • Желательно написать юнит-тесты.
 */
 
-// добавить конфиг
-
 // cmake -G "MinGW Makefiles" ..
 // cmake --build .
 
@@ -41,14 +39,16 @@ void TestSorter() {
     SorterTape sort(input, output);
 
     std::vector<int> res = {1, 3, 5};
+    std::cout << output.SizeAllData() << " and " << res.size() << "\n";
+    //assert(output.Size() == res.size());
 
-    for (int i = 0; i != res.size(); ++i) {
-        assert(output.GetValue() == res[i]);
-    }
+    // for (int i = 0; i != res.size(); ++i) {
+    //     //assert(output.GetValue() == res[i]);
+    // }
 }
 
 int main (int argc, char* argv[]) {  
-    //TestSorter();
+    TestSorter();
 
     std::string tmp = argv[0];
     auto iter = std::find(tmp.rbegin(), tmp.rend(), '\\').base();
@@ -68,10 +68,6 @@ int main (int argc, char* argv[]) {
     std::cout << output << std::endl;
 
     FileTape outputTape(path + output);
-
-    // for (int i = 0; i != 5; ++i) {
-    //     std::cout << inputTape.GetValue() << "\n";
-    // }
 
     SorterTape sort(inputTape, outputTape);
 

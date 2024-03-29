@@ -33,7 +33,6 @@ void FileTape::Read() {
             tmp << dataTmp << " ";
             ++sizeData;
         } else {
-            std::cout << dataTmp << std::endl;
             data_.push_back(dataTmp);
         }
     }
@@ -51,6 +50,19 @@ void FileTape::Write() {
         file_ << data_[pos_] << " ";
         ForwardOneStep();
     }
+    
+    if (SizeAllData() != Size()) {
+        int num = 0;
+
+        fileTmp_.open(".\\tmp\\sorttmp.txt", std::ios::in | std::ios::out | std::ios::binary);
+        if (!fileTmp_.is_open()) throw std::runtime_error(".\\tmp\\sorttmp.txt Impossible to open");
+
+        while (fileTmp_ >> num) {
+            file_ << num << " ";
+        }
+        fileTmp_.close();
+    }
+    file_.close();
 }
 
 size_t FileTape::Size() {
@@ -101,10 +113,18 @@ int FileTape::GetValue() {
 }
 
 void FileTape::SetValue(int value) {
+    if (Size() == 0) {
+        std::ofstream output(".\\tmp\\sorttmp.txt");
+        if (!output.is_open()) throw std::runtime_error(".\\tmp\\sorttmp.txt Impossible to create");
+        output.close();
+        fileTmp_.open(".\\tmp\\sorttmp.txt", std::ios::in | std::ios::out | std::ios::binary);
+        if (!fileTmp_.is_open()) throw std::runtime_error(".\\tmp\\sorttmp.txt Impossible to open");
+    }
+    
     if (data_.size() >= M_ / sizeof(int)) {
         fileTmp_ << value << " ";
+        ++sizeData;
     } else {
-        std::cout << value << std::endl;
         data_.push_back(value);
     }
     
@@ -142,6 +162,6 @@ void FileTape::GetConfig() {
     conf.close();
 }
 
-void FileTape::SetTape(const std::string& textFile) {
-    fileTmp_.open(textFile);
+void FileTape::CloseAdditionalFile() {
+    fileTmp_.close();
 }
