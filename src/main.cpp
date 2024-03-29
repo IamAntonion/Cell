@@ -69,6 +69,10 @@ int main (int argc, char* argv[]) {
 
     FileTape outputTape(path + output);
 
+    // for (int i = 0; i != 5; ++i) {
+    //     std::cout << inputTape.GetValue() << "\n";
+    // }
+
     SorterTape sort(inputTape, outputTape);
 
     outputTape.Write();

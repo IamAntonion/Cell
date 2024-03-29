@@ -6,10 +6,6 @@ FileTape::FileTape() {
 
 FileTape::FileTape(const std::string& fileName) {
     GetConfig();
-    //auto iter = std::find(fileName.rbegin(), fileName.rend(), '\\');
-    //nameFile_ = fileName.substr(fileName.size() - std::distance(iter.base(), fileName.end()));
-
-    //std::cout << nameFile_ << "\n";
 
     file_.open(fileName, std::ios::in | std::ios::out | std::ios::binary);
     if (!file_.is_open()) {
@@ -26,41 +22,26 @@ FileTape::FileTape(const std::string& fileName) {
 void FileTape::Read() {
     int dataTmp;
     std::ofstream tmp;
-    bool first = false;
+    bool first = true;
 
     while (file_ >> dataTmp) {
         if (data_.size() >= M_ / sizeof(int)) {
-            if (!first) {
+            if (first) {
                 tmp.open(".\\tmp\\tmp.txt");
-                first = true;
+                first = false;
             }
             tmp << dataTmp << " ";
+            ++sizeData;
         } else {
             std::cout << dataTmp << std::endl;
             data_.push_back(dataTmp);
         }
     }
 
-    if (tmp.is_open()) {
-        file_.close();
-        tmp.close();
+    file_.close();
+    tmp.close();
 
-        std::ofstream outputText(".\\tmp\\outtmp.txt");
-        std::ifstream inputText(".\\tmp\\tmp.txt");
-
-        int num;
-        while (inputText >> num) {
-            outputText << num << " ";
-        }
-
-        outputText.close();
-        inputText.close();
-
-        //static FileTape tapeTmp(".\\tmp\\outtmp.txt");
-        FileTape tapeTmp(".\\tmp\\outtmp.txt");
-        tmpTape_ = &tapeTmp;
-        tmpTape_->Read();
-    }
+    Rewind();
 }
 
 void FileTape::Write() {
@@ -73,27 +54,50 @@ void FileTape::Write() {
 }
 
 size_t FileTape::Size() {
-    size_t size = 0;
-    //if (tmpTape_ != nullptr) size += tmpTape_->Size();
-    size += data_.size();
-    return size;
+    return data_.size();;
+}
+
+size_t FileTape::SizeAllData() {
+    return Size() + sizeData;
 }
 
 int FileTape::GetValue() {
     if (data_.empty()) throw std::invalid_argument("Can't get value. Vector is empty");
-
-    int tmp = NULL;
+    int result;
     if (pos_ != Size()) {
-        tmp = data_[pos_];
+        result = data_[pos_];
         ForwardOneStep();
-        return tmp;
+        return result;
     }
-    //if (tmp == NULL) {
-    if (pos_ == Size()) {
-        tmp = tmpTape_->GetValue();
-        return tmp;
+    
+    std::ofstream outputText(".\\tmp\\outtmp.txt");
+    std::ifstream inputText(".\\tmp\\tmp.txt");
+
+    bool first = true;
+    int tmp;
+    while (inputText >> tmp) {
+        if (first == true) {
+            first = false;
+            result = tmp;
+        } else {
+            outputText << tmp << " ";
+        }
     }
-    return tmp;
+
+    outputText.close();
+    inputText.close();
+
+    std::ofstream output(".\\tmp\\tmp.txt");
+    std::ifstream input(".\\tmp\\outtmp.txt");
+
+    while (input >> tmp) {
+        output << tmp << " ";
+    }
+
+    output.close();
+    input.close();
+
+    return result;
 }
 
 void FileTape::SetValue(int value) {

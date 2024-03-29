@@ -7,20 +7,24 @@ SorterTape::SorterTape(TapeInterface& input, TapeInterface& output) {
 void SorterTape::Sort(TapeInterface& input, TapeInterface& output) {
     std::vector<int> dataTmp;
 
-    int size = input.Size();
-    dataTmp.reserve(size);
+    // int size = input.Size();
+    // dataTmp.reserve(size);
 
-    for (int i = 0; i != size; ++i) {
-    //while (1) {
-        //if (input.GetValue() == NULL) break;
+    input.Rewind();
+
+    std::cout << "Size^ "<< input.SizeAllData() << "\n";
+
+    //for (int i = 0; i != size; ++i) {
+    for (int i = 0; i!= input.SizeAllData(); ++i) {
         int tmp = input.GetValue();
-        std::cout << tmp << " ";
+        std::cout << tmp << "\n";
         dataTmp.push_back(tmp);
     }
 
 
     std::sort(dataTmp.begin(), dataTmp.end());
 
+    std::cout << "Sorting\n";
     for (int i = 0; i != dataTmp.size(); ++i) {
         output.SetValue(dataTmp[i]);
     }
